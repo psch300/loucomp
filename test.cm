@@ -1,8 +1,9 @@
 /* A program to perform Euclid's
-  Algorithm to computer gcd */
+   Algorithm to computer gcd */
+
 int gcd (int u, int v)
 {
-    if (v == 0) return u;
+    if (v >= 0) return u;
     else return gcd(v,u-u/v*v);
     /* u-u/v*v == u mod v */
 }
@@ -13,3 +14,5 @@ void main(void)
     x = input(); y = input();
     output(gcd(x,y));
 }
+
+/* asdfasdf

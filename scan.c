@@ -104,10 +104,10 @@ TokenType getToken(void)
            state = INGT;
          else if (c == '!')
            state = INNE;
-	 else if (c == '/') {
-	   save = FALSE;
-	   state = INOVER;
-	 }
+		 else if (c == '/') {
+	       save = FALSE;
+	       state = INOVER;
+	     }
          else
          { state = DONE;
            switch (c)
@@ -166,17 +166,22 @@ TokenType getToken(void)
          }
          break;
        case INCOMMENT:
-         save = FALSE;
-         if (c == '*')
+	     save = FALSE;
+		 if (c == EOF) {
+		   state = DONE;
+		   currentToken = ENDFILE;
+		 }
+		 else if (c == '*') 
            state = INCOMMENT_;
          break;
        case INCOMMENT_:
-         save = FALSE;
-         if (c == '/')
-           state = START;
-         else {
-           state = INCOMMENT;
-         }
+		 save = FALSE;
+		 if (c == EOF) {
+		   state = DONE;
+		   currentToken = ENDFILE;
+		 }
+		 else if (c == '/') state = START;
+         else state = INCOMMENT;
          break;
        case INEQ:
          state = DONE;
