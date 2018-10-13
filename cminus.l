@@ -62,7 +62,7 @@ whitespace  [ \t]+
                   do
                   { second_c = first_c;
 					first_c = input();
-                    if (first_c == EOF) break;
+                    if (first_c == EOF || first_c == '\0') break;
                     if (first_c == '\n') lineno++;
                   } while (!(first_c == '/' && second_c == '*'));
                 }

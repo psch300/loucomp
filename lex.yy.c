@@ -961,7 +961,7 @@ YY_RULE_SETUP
                   do
                   { second_c = first_c;
 					first_c = input();
-                    if (first_c == eof) break;
+                    if (first_c == EOF || first_c == '\0') break;
                     if (first_c == '\n') lineno++;
                   } while (!(first_c == '/' && second_c == '*'));
                 }
