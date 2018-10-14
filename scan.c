@@ -105,7 +105,7 @@ TokenType getToken(void)
          else if (c == '!')
            state = INNE;
 		 else if (c == '/') {
-	       save = FALSE;
+		   save = FALSE;
 	       state = INOVER;
 	     }
          else
