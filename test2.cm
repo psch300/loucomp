@@ -3,7 +3,7 @@ void main(void)
 	int i; int x[5];
 	
 	i = 0;
-	while( i <+ 5 )
+	while( i < 5 )
 	{
 		x[i] = input();
 

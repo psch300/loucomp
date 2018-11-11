@@ -50,7 +50,6 @@ static void insertNode( TreeNode * t)
   { case StmtK:
       switch (t->kind.stmt)
       { case AssignK:
-        case ReadK:
           if (st_lookup(t->attr.name) == -1)
           /* not yet in table, so treat as new definition */
             st_insert(t->attr.name,t->lineno,location++);
@@ -132,14 +131,6 @@ static void checkNode(TreeNode * t)
         case AssignK:
           if (t->child[0]->type != Integer)
             typeError(t->child[0],"assignment of non-integer value");
-          break;
-        case WriteK:
-          if (t->child[0]->type != Integer)
-            typeError(t->child[0],"write of non-integer value");
-          break;
-        case RepeatK:
-          if (t->child[1]->type == Integer)
-            typeError(t->child[1],"repeat test is not Boolean");
           break;
         default:
           break;

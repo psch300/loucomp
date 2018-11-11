@@ -28,12 +28,6 @@ whitespace  [ \t]+
 "return"		{return RETURN;}
 "int"			{return INT;}
 "void"			{return VOID;}
-"then"			{return THEN;}
-"end"			{return END;}
-"repeat"		{return REPEAT;}
-"until"			{return UNTIL;}
-"read"			{return READ;}
-"write"			{return WRITE;}
 "="				{return ASSIGN;}
 "=="			{return EQ;}
 "!="			{return NE;}

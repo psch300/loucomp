@@ -13,6 +13,13 @@
  */
 void printToken( TokenType, const char* );
 
+TreeNode * newDeclNode(DeclKind);
+
+TreeNode * newParamNode(ParamKind);
+
+TreeNode * newTypeNode(TypeKind);
+
+
 /* Function newStmtNode creates a new statement
  * node for syntax tree construction
  */
